@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/get-user', [UpdateController::class, 'getUser']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/update_user', [UpdateController::class, 'update_user']);
