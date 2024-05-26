@@ -19,6 +19,7 @@ class UpdateController extends Controller
     public function update_user(Request $request)
     {
         $user = User::find($request->id);
+        $user->role = $request->changed_to;
 
         $notification = new Notification();
 
@@ -28,6 +29,7 @@ class UpdateController extends Controller
 
         try {
             $notification->save();
+            $user->save();
             return response()->json([
                 'status' => 'success',
                 'msg' => 'Data Updated Successfully',
