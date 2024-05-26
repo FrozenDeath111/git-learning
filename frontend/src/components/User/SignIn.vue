@@ -37,7 +37,7 @@ export default {
           if (response.status === 200) {
             localStorage.setItem("role", response.data.role);
             localStorage.setItem("username", this.formValues.username);
-            this.$router.push("/");
+            this.$router.push("/about");
           } else {
             alert("Error!");
           }
