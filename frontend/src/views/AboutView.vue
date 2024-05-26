@@ -2,13 +2,14 @@
   <div class="about">
     <h1>This is an about page</h1>
     
-      <ShowNav v-if="showNav" name="A"></ShowNav>
-      <ShowNav name="B"></ShowNav>
-      <ShowNav name="C"></ShowNav>
-      <ShowNav name="D"></ShowNav>
-      <ShowNav name="E"></ShowNav>
-      <ShowNav name="F"></ShowNav>
-      <ShowNav name="G"></ShowNav>
+      <ShowNav v-if="role === 'super admin'" name="A"></ShowNav>
+      <ShowNav v-if="role === 'super admin'" name="B"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin'" name="C"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin'" name="D"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin' || role === 'admin'" name="E"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin' || role === 'admin'" name="F"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin' || role === 'admin' || role === 'user'" name="G"></ShowNav>
+      <ShowNav v-if="role === 'super admin' || role === 'sub admin' || role === 'admin' || role === 'user'" name="H"></ShowNav>
     
     <p>{{ role }}</p>
   </div>
@@ -28,13 +29,6 @@ import ShowNav from './ShowNav.vue'
         visible : false
     }
   },
-  methods :{
-    showNav(){
-      if(this.role === "super"){
-        return true;
-      }
-    }
-  }
  }
  </script>
  
