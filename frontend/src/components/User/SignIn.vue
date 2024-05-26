@@ -36,7 +36,7 @@
           console.log(response.data);
             if(response.status === 200){
                 localStorage.setItem('role', response.data.role);
-                this.$router.push('/');
+                this.$router.push('/about');
             }else{
                 alert("Error!");
             }
