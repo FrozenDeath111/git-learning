@@ -27,7 +27,7 @@ class UpdateController extends Controller
         $notification->changed_to = $request->changed_to;
 
         try {
-            $notification . save();
+            $notification->save();
             return response()->json([
                 'status' => 'success',
                 'msg' => 'Data Updated Successfully',
