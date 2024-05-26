@@ -28,6 +28,7 @@ export default {
       },
     };
   },
+
   methods: {
     submitForm() {
       axios
@@ -43,7 +44,7 @@ export default {
           }
         })
         .catch((error) => console.log(error));
-    },
+      },
   },
 };
 </script>
